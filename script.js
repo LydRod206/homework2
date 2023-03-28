@@ -1,14 +1,14 @@
 //Series of prompts
 //ask to enter a password
-var askEnter;
+var askEnter = prompt("would you like a random password?");
 //ask how many characters in password
-var askLength;
+var askLength = prompt("how many characters would you like in the password?, 8>28");
 //ask if they want lowercase characters
-var askLower;
+var askLower = prompt("would you like lowercase characters included?");
 //ask if they want uppercase characters
-var askUpper;
+var askUpper = prompt("would you like uppercase characters included?");
 //ask if they want special characters
-var askSpecial;
+var askSpecial = prompt("would you like special characters included?");
 
 
 function generatePassword(){
