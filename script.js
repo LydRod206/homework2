@@ -1,5 +1,20 @@
+//Series of prompts
+//ask to enter a password
+var askEnter;
+//ask how many characters in password
+var askLength;
+//ask if they want lowercase characters
+var askLower;
+//ask if they want uppercase characters
+var askUpper;
+//ask if they want special characters
+var askSpecial;
+
+
 function generatePassword(){
-  return "I like Cats!"
+  if (!askEnter) {
+      alert("please enter");
+  }
 }
 
 // Assignment Code
