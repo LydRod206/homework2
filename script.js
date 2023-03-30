@@ -1,25 +1,41 @@
 //Series of prompts
 //ask to enter a password
-var askEnter = prompt("would you like a random password?");
+var askEnter = "would you like a random password?";
 //ask how many characters in password
-var askLength = prompt("how many characters would you like in the password?, 8>28");
+var askLength = "how many characters would you like in the password?, 8>28";
 //ask if they want lowercase characters
-var askLower = prompt("would you like lowercase characters included?");
+var askLower = "would you like lowercase characters included?";
 //ask if they want uppercase characters
-var askUpper = prompt("would you like uppercase characters included?");
+var askUpper = "would you like uppercase characters included?";
+//ask if they want numbers
+var askNum = "would you like numbers included?"
 //ask if they want special characters
-var askSpecial = prompt("would you like special characters included?");
+var askSpecial = "would you like special characters included?";
+
+//confirm function
+function getCriteria(){
+  var criteria = {};
+  criteria.length = parseInt(prompt(charLength));
+  criteria.lower = confirm(askLower);
+  criteria.upper = confirm(askUpper);
+  criteria.num = confirm(askNum);
+  criteria.special = confirm(askSpecial);
+  return criteria;
+}
+
 
 //main function
-function generatePassword(charLength){
+function generatePassword(){
   var password = " ";
-  const arrayLower = "abcdefghijklmnopqrtsuvsxyz";
-  const arrayUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const arraySpecial = "!@#$%^&*()_+{}:<>?";
-  const arrayLetters = arrayLower.concat(arrayUpper);
-  const Array = arraySpecial.concat(arrayLetters);
-  var charLength = "8 > 28";
-  for ( var i = 0; i < Array; i++){
+  var characters = " ";
+  var Lower = "abcdefghijklmnopqrtsuvsxyz";
+  var Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var Num = "1234567890";
+  var Special = "!@#$%^&*()_+{}:<>?";
+  var criteria = getCriteria();
+  
+  var counter = 0;
+  for ( var i = 0; i < criteria.length; i++){
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
       counter += 1;
   }
