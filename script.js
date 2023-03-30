@@ -1,21 +1,21 @@
 //Series of prompts
 //ask to enter a password
-var askEnter = "would you like a random password?";
+var askEnter = prompt("would you like a random password?");
 //ask how many characters in password
-var askLength = "how many characters would you like in the password?, 8>28";
+var askLength = prompt("how many characters would you like in the password?, 8>28");
 //ask if they want lowercase characters
-var askLower = "would you like lowercase characters included?";
+var askLower = prompt("would you like lowercase characters included?");
 //ask if they want uppercase characters
-var askUpper = "would you like uppercase characters included?";
+var askUpper = prompt("would you like uppercase characters included?");
 //ask if they want numbers
-var askNum = "would you like numbers included?"
+var askNum = prompt("would you like numbers included?");
 //ask if they want special characters
-var askSpecial = "would you like special characters included?";
+var askSpecial = prompt("would you like special characters included?");
 
 //confirm function
 function getCriteria(){
   var criteria = {};
-  criteria.length = parseInt(prompt(charLength));
+  criteria.length = parseInt(prompt(askLength));
   criteria.lower = confirm(askLower);
   criteria.upper = confirm(askUpper);
   criteria.num = confirm(askNum);
@@ -28,15 +28,28 @@ function getCriteria(){
 function generatePassword(){
   var password = " ";
   var characters = " ";
-  var Lower = "abcdefghijklmnopqrtsuvsxyz";
-  var Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var Num = "1234567890";
-  var Special = "!@#$%^&*()_+{}:<>?";
+  var lower = "abcdefghijklmnopqrtsuvsxyz";
+  var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var num = "1234567890";
+  var special = "!@#$%^&*()_+{}:<>?";
   var criteria = getCriteria();
+
+  if (criteria.lower) {
+    characters += lower;
+  }
+  if (criteria.upper) {
+    characters += upper;
+  }
+  if (criteria.num) {
+    characters += num;
+  }
+  if (criteria.special) {
+    characters += special;
+  }
   
   var counter = 0;
   for ( var i = 0; i < criteria.length; i++){
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    password += characters.charAt(Math.floor(Math.random() * charactersLength));
       counter += 1;
   }
   return password;
