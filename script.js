@@ -10,11 +10,20 @@ var askUpper = prompt("would you like uppercase characters included?");
 //ask if they want special characters
 var askSpecial = prompt("would you like special characters included?");
 
-
-function generatePassword(){
-  if (!askEnter) {
-      alert("please enter");
+//main function
+function generatePassword(charLength){
+  var password = " ";
+  const arrayLower = "abcdefghijklmnopqrtsuvsxyz";
+  const arrayUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const arraySpecial = "!@#$%^&*()_+{}:<>?";
+  const arrayLetters = arrayLower.concat(arrayUpper);
+  const Array = arraySpecial.concat(arrayLetters);
+  var charLength = "8 > 28";
+  for ( var i = 0; i < Array; i++){
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
   }
+  return password;
 }
 
 // Assignment Code
